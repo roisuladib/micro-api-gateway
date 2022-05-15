@@ -10,9 +10,9 @@ module.exports = async (req, res) => {
    } 
    catch (err) {
       if (err.code === 'ECONNREFUSED') {
-         return res.status(500).json({
+         return res.status(503).json({
             status: 'error',
-            message: 'Servie Unavailable'
+            message: 'Service Unavailable'
          })
       }
       const { status, data } = err.response;
